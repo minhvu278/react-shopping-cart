@@ -3,15 +3,18 @@ const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const shortid = require("shortid")
 
+// Var data require("./build/data.json")
 const app = express();
 app.use(bodyParser.json());
 
+//deploy
 mongoose.connect("mongodb://localhost/react-shopping-cart-db", {
     userNewUrlParse: true,
     useCreateIndex: true,
     useUnifiedTopology: true
 });
 
+// Mongodb
 const Product = mongoose.model(
     "products",
     new mongoose.Schema({
