@@ -38,9 +38,9 @@ app.post("/api/products", async (req, res) => {
     res.send(saveProduct)
 });
 
-app.delete("api/products/:id", async (req, res) => {
-    const deleteProduct = await Product.findByIdAndDelete(req.param.id);
-    res.send(deleteProduct);
+app.delete("/api/products/:id", async (req, res) => {
+    const deletedProduct = await Product.findByIdAndDelete(req.params.id);
+    res.send(deletedProduct);
 });
 
 const port = process.env.PORT || 5000;
