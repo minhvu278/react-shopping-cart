@@ -23,10 +23,10 @@ export const addToCart = (product) => (dispatch, getState) => {
 }
 
 export const removeFromCart = (product) => (dispatch, getState) => {
-    // const cartItems = getState().cart.cartItems.slice().filter((x) => x._id !== product._id);
-    // dispatch({
-    //     type: REMOVE_FROM_CART,
-    //     payload: {cartItems}
-    // })
-    // localStorage.setItem(JSON.stringify(cartItems))
+    const cartItems = getState().cart.cartItems.slice().filter((x) => x._id !== product._id);
+    dispatch({
+        type: REMOVE_FROM_CART,
+        payload: {cartItems}
+    })
+    localStorage.setItem("cartItems", JSON.stringify(cartItems))
 }
