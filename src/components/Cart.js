@@ -55,29 +55,29 @@ class Cart extends Component {
                                     <h2>Order {order._id}</h2>
                                     <ul>
                                         <li>
-                                            <div>Name: </div>
+                                            <div>Name:</div>
                                             <div>{order.name}</div>
                                         </li>
                                         <li>
-                                            <div>Email: </div>
+                                            <div>Email:</div>
                                             <div>{order.email}</div>
                                         </li>
                                         <li>
-                                            <div>Address: </div>
+                                            <div>Address:</div>
                                             <div>{order.address}</div>
                                         </li>
                                         <li>
-                                            <div>Date: </div>
+                                            <div>Date:</div>
                                             <div>{order.createdAt}</div>
                                         </li>
                                         <li>
-                                            <div>Total: </div>
+                                            <div>Total:</div>
                                             <div>{formatCurrency(order.total)}</div>
                                         </li>
                                         <li>
-                                            <div>Cart Items: </div>
-                                            <div>{order.cartItems.map((x) => (
-                                                <div>
+                                            <div>Cart Items:</div>
+                                            <div>{order.cartItems.map((x, index) => (
+                                                <div key={index}>
                                                     {x.count} {" x "} {x.title}
                                                 </div>
                                             ))}</div>
